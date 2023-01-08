@@ -31,7 +31,7 @@ public class EmisorMensajesControlador {
 		SimpleDateFormat formateador = new SimpleDateFormat("dd-MM-yyyy");
         mensajeDTO.setFechaActual(formateador.format(new Date()));
         char[] CARACTERES_AZ_09 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789".toLowerCase().toCharArray();
-        mensajeDTO.setEmail(String.format("%s@gmail.com", textoRandomico(CARACTERES_AZ_09, 4)));
+        mensajeDTO.setEmail(String.format("%s@test.com", textoRandomico(CARACTERES_AZ_09, 4)));
         int codigoAcceso = new Random().nextInt(1000, 10000);
         mensajeDTO.setMensaje(String.format("Hola, tu codigo de acceso es %d", new Random().nextLong(1000, 10000)));
         Gson gson = new Gson();
