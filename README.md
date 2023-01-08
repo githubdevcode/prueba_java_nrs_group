@@ -14,7 +14,7 @@ Requerimientos para ejecutar el proyecto de gestion de mensajes
 
 Pasos para ejecutar el proyecto de gestion de mensajes
 
-1. Descargar el proyecto gestormensajes al computador local
+1. Descargar el repositorio prueba_java_nrs_group al computador local
 2. Abrir una consola de comandos
 3. Ingresar a la carpeta gestormensajes del proyecto prueba_java_nrs_group en la consola de comandos
 4. Asignar permisos de ejecucion al archivo mvnw de manera que se pueda ejecutar por parte de docker-compose
