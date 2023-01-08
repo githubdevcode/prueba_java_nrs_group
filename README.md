@@ -16,7 +16,7 @@ Pasos para ejecutar el proyecto de gestion de mensajes
 
 1. Descargar el repositorio prueba_java_nrs_group al computador local
 2. Abrir una consola de comandos
-3. Ingresar a la carpeta gestormensajes del proyecto prueba_java_nrs_group en la consola de comandos
+3. Ingresar a la carpeta gestormensajes del repositorio prueba_java_nrs_group en la consola de comandos
 4. Asignar permisos de ejecucion al archivo mvnw de manera que se pueda ejecutar por parte de docker-compose
     - NOTA: La asignacion de permisos de ejecucion es relativa al sistema operativo. En linux la asignacion de permisos al archivo mvnw se hace utilizando       el siguiente comando "sudo chmod 777 mvnw" En windows la asignacion de permisos al archivo mvnw se puede hacer por medio del comando icacls. En el         sistema operativo macos la asignacion de permisos al archivo mvnw se puede hacer como se indica en el siguiente enlace 
       https://support.apple.com/es-co/guide/mac-help/mchlp1203/mac
