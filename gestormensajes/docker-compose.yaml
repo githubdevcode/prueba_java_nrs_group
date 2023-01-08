@@ -1,0 +1,43 @@
+version: "3.9"
+services:
+  zookeeper:
+    container_name: zookeeper
+    image: bitnami/zookeeper:3.8.0-debian-11-r71
+    ports:
+      - 2181:2181
+    environment:
+      ALLOW_ANONYMOUS_LOGIN: yes
+    restart: always
+    networks:
+      - app-tier
+  kafka:
+    container_name: kafka
+    image: bitnami/kafka:3.3.1-debian-11-r28
+    ports:
+      - "9093:9093"
+    environment:
+      KAFKA_CFG_ZOOKEEPER_CONNECT: zookeeper:2181
+      ALLOW_PLAINTEXT_LISTENER: yes
+      KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP: CLIENT:PLAINTEXT,EXTERNAL:PLAINTEXT
+      KAFKA_CFG_LISTENERS: CLIENT://:9092,EXTERNAL://:9093
+      KAFKA_CFG_ADVERTISED_LISTENERS: CLIENT://kafka:9092,EXTERNAL://localhost:9093
+      KAFKA_CFG_INTER_BROKER_LISTENER_NAME: CLIENT
+    restart: always
+    networks: 
+      - app-tier
+    depends_on:
+      - zookeeper
+  gestormensajes:
+    container_name: gestormensajes
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    ports:
+      - "8001:8001"
+    networks:
+      - app-tier
+    depends_on:
+      - kafka
+networks:
+  app-tier:
+    name: app-tier
