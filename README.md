@@ -20,7 +20,7 @@ Pasos para ejecutar el proyecto de gestion de mensajes
 4. Asignar permisos de ejecucion al archivo mvnw de manera que se pueda ejecutar por parte de docker-compose
     - NOTA: La asignacion de permisos de ejecucion es relativa al sistema operativo. En linux la asignacion de permisos al archivo mvnw se hace utilizando       el siguiente comando "sudo chmod 777 mvnw" En windows la asignacion de permisos al archivo mvnw se puede hacer por medio del comando icacls. En el         sistema operativo macos la asignacion de permisos se puede hacer como se indica en el siguiente enlace 
       https://support.apple.com/es-co/guide/mac-help/mchlp1203/mac
-7. Ejecutar el archivo Dockerfile por medio del comando "docker-compose up" en la consola de comandos
+7. Ejecutar el comando "docker-compose up" en la consola de comandos.
 
 Pasos para ver los mensajes de log de la ejecucion del microservicio gestormensajes
 
