@@ -52,7 +52,7 @@ public class EnviarMensajeTest {
 		// System.out.println("Este test!!");
 		CompletableFuture<SendResult<Integer, String>> resultadoEnvioFuturo = plantillaKafka.send(obtenerProducerRecord("topico_mensaje", 0, 41, "{\n"
 				+ "\"fechaActual\": \"02-01-2023\",\n"
-				+ "\"email\": \"jjfk8927@gmail.com\",\n"
+				+ "\"email\": \"jjfk8927@test.com\",\n"
 				+ "\"mensaje\": \"Hola, tu codigo de acceso es 2232\"\n"
 				+ "}"));
 		resultadoEnvioFuturo.whenComplete((resultado, error) -> {
@@ -62,7 +62,7 @@ public class EnviarMensajeTest {
 				logger.info("El resultado es: Llave -> {} Valor -> {} Particion -> {} Offset -> {}", resultado.getProducerRecord().key(),
 					resultado.getProducerRecord().value(), resultado.getProducerRecord().partition(), resultado.getRecordMetadata().offset());
 				Assert.assertEquals("La fecha actual no es igual a 02-01-2023", "02-01-2023", mensajeDTO.getFechaActual());
-				Assert.assertEquals("El email no es el esperado jjfk8927@gmail.com", "jjfk8927@gmail.com", mensajeDTO.getEmail());
+				Assert.assertEquals("El email no es el esperado jjfk8927@test.com", "jjfk8927@test.com", mensajeDTO.getEmail());
 				Assert.assertEquals("El mensaje no es igual al esperado: Hola, tu codigo de acceso es 2232", mensajeDTO.getMensaje(), 
 						"Hola, tu codigo de acceso es 2232");
 				Assert.assertEquals("El topico no es igual a topico_mensaje", "topico_mensaje", resultado.getProducerRecord().topic());
@@ -119,7 +119,7 @@ public class EnviarMensajeTest {
 	public void testMensajeNoExisteNoFueImpreso() {
 		Mensaje mensaje = new Mensaje();
 		mensaje.setFechaActual("06-01-2023");
-		mensaje.setEmail("jjfk8927@gmail.com");
+		mensaje.setEmail("jjfk8927@test.com");
 		mensaje.setMensaje("Hola, tu codigo de acceso es 2232");
 		// mensajeService.guardar(mensaje);
 		Gson gson = new Gson();
@@ -133,12 +133,12 @@ public class EnviarMensajeTest {
 	public void testMensajeNoExisteMensajeImpresoExiste() {
 		MensajeImpreso mensajeImpreso = new MensajeImpreso();
 		mensajeImpreso.setFechaActual("06-01-2023");
-		mensajeImpreso.setEmail("jjfk8927@gmail.com");
+		mensajeImpreso.setEmail("jjfk8927@test.com");
 		mensajeImpreso.setMensaje("Hola, tu codigo de acceso es 2232");
 		mensajeImpresoService.guardar(mensajeImpreso);
 		Mensaje mensaje = new Mensaje();
 		mensaje.setFechaActual("05-01-2023");
-		mensaje.setEmail("jjfk8927@gmail.com");
+		mensaje.setEmail("jjfk8927@test.com");
 		mensaje.setMensaje("Hola, tu codigo de acceso es 2232");
 		Gson gson = new Gson();
 		String mensajeJson = gson.toJson(mensaje);
