@@ -17,7 +17,7 @@ Pasos para ejecutar el proyecto de gestion de mensajes
 1. Descargar el proyecto al computador local
 2. Abrir una consola de comandos
 3. Ingresar a la carpeta gestormensajes del proyecto prueba_java_nrs_group en la consola de comandos
-4. Ejecutar el comando "sudo chmod 777 mvnw" el cual se encarga de asignar permisos al ejecutable de maven mvnw
+4. Ejecutar el comando "sudo chmod 777 mvnw" el cual se encarga de asignar permisos al ejecutable de maven mvnw de manera que se pueda ejecutar
 4. Ejecutar el archivo Dockerfile por medio del comando "docker-compose up" en la consola de comandos
 
 Pasos para ver los mensajes de log de la ejecucion del microservicio gestormensajes
