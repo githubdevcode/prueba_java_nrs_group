@@ -25,5 +25,4 @@ RUN ./mvnw clean package
 
 EXPOSE 8001
 
-USER admin
 ENTRYPOINT ["java","-jar","./target/gestormensajes-0.0.1-SNAPSHOT.jar"]
